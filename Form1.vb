@@ -42,16 +42,6 @@ Public Class Form1
         txtMobileNumber.MaxLength = 10
 
     End Sub
-
-    Private Sub txtRegistrationNumber_Validating(sender As Object, e As CancelEventArgs) Handles txtRegistrationNumber.Validating
-        If String.IsNullOrEmpty(txtRegistrationNumber.Text.Trim) Then
-            MessageBox.Show("Warning! Please input your registration number")
-        End If
-    End Sub
-    Private Sub txtRegistrationNumber_TextChanged(sender As Object, e As EventArgs) Handles txtRegistrationNumber.TextChanged
-        txtRegistrationNumber.MaxLength = 7
-
-    End Sub
     Private Sub txtFullNames_TextChanged(sender As Object, e As EventArgs) Handles txtFullNames.TextChanged
         txtFullNames.CharacterCasing = CharacterCasing.Upper
     End Sub
@@ -82,14 +72,6 @@ Public Class Form1
 
     Private Sub txtMobileNumber_GotFocus(sender As Object, e As EventArgs) Handles txtMobileNumber.GotFocus
         txtMobileNumber.BackColor = BackColor.Blue
-    End Sub
-
-    Private Sub txtRegistrationNumber_LostFocus(sender As Object, e As EventArgs) Handles txtRegistrationNumber.LostFocus
-        txtRegistrationNumber.BackColor = BackColor.White
-    End Sub
-
-    Private Sub txtRegistrationNumber_GotFocus(sender As Object, e As EventArgs) Handles txtRegistrationNumber.GotFocus
-        txtRegistrationNumber.BackColor = BackColor.Blue
     End Sub
 
     Private Sub txtemailaddress_LostFocus(sender As Object, e As EventArgs) Handles txtemailaddress.LostFocus
@@ -133,5 +115,19 @@ Public Class Form1
         End If
 
 
+    End Sub
+
+    Private Sub MaskedTextBox1_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles MaskedTextBox1.MaskInputRejected
+        If String.IsNullOrEmpty(MaskedTextBox1.Text.Trim) Then
+            MessageBox.Show("Warning! Please input your registration number")
+        End If
+    End Sub
+
+    Private Sub MaskedTextBox1_LostFocus(sender As Object, e As EventArgs) Handles MaskedTextBox1.LostFocus
+        MaskedTextBox1.BackColor = BackColor.White
+    End Sub
+
+    Private Sub MaskedTextBox1_GotFocus(sender As Object, e As EventArgs) Handles MaskedTextBox1.GotFocus
+        MaskedTextBox1.BackColor = BackColor.Blue
     End Sub
 End Class

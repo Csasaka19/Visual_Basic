@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupStudentDetails = New System.Windows.Forms.GroupBox()
+        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
         Me.txtoutput2 = New System.Windows.Forms.Label()
         Me.txtoutput1 = New System.Windows.Forms.Label()
         Me.cbo1 = New System.Windows.Forms.ComboBox()
@@ -41,13 +42,13 @@ Partial Class Form1
         Me.txtemailaddress = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.labelRegNo = New System.Windows.Forms.Label()
-        Me.txtRegistrationNumber = New System.Windows.Forms.TextBox()
         Me.GroupStudentDetails.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupStudentDetails
         '
         Me.GroupStudentDetails.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupStudentDetails.Controls.Add(Me.MaskedTextBox1)
         Me.GroupStudentDetails.Controls.Add(Me.txtoutput2)
         Me.GroupStudentDetails.Controls.Add(Me.txtoutput1)
         Me.GroupStudentDetails.Controls.Add(Me.cbo1)
@@ -66,7 +67,6 @@ Partial Class Form1
         Me.GroupStudentDetails.Controls.Add(Me.txtemailaddress)
         Me.GroupStudentDetails.Controls.Add(Me.Label4)
         Me.GroupStudentDetails.Controls.Add(Me.labelRegNo)
-        Me.GroupStudentDetails.Controls.Add(Me.txtRegistrationNumber)
         Me.GroupStudentDetails.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupStudentDetails.Location = New System.Drawing.Point(26, 12)
         Me.GroupStudentDetails.Name = "GroupStudentDetails"
@@ -74,6 +74,14 @@ Partial Class Form1
         Me.GroupStudentDetails.TabIndex = 0
         Me.GroupStudentDetails.TabStop = False
         Me.GroupStudentDetails.Text = "Student Details"
+        '
+        'MaskedTextBox1
+        '
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(332, 51)
+        Me.MaskedTextBox1.Mask = "00-0000"
+        Me.MaskedTextBox1.Name = "MaskedTextBox1"
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(203, 39)
+        Me.MaskedTextBox1.TabIndex = 0
         '
         'txtoutput2
         '
@@ -237,14 +245,6 @@ Partial Class Form1
         Me.labelRegNo.TabIndex = 1
         Me.labelRegNo.Text = "Registration Number"
         '
-        'txtRegistrationNumber
-        '
-        Me.txtRegistrationNumber.AllowDrop = True
-        Me.txtRegistrationNumber.Location = New System.Drawing.Point(364, 44)
-        Me.txtRegistrationNumber.Name = "txtRegistrationNumber"
-        Me.txtRegistrationNumber.Size = New System.Drawing.Size(199, 39)
-        Me.txtRegistrationNumber.TabIndex = 0
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -275,9 +275,9 @@ Partial Class Form1
     Friend WithEvents txtemailaddress As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents labelRegNo As Label
-    Friend WithEvents txtRegistrationNumber As TextBox
     Friend WithEvents cbo1 As ComboBox
     Friend WithEvents ListBoxHobbies As ListBox
     Friend WithEvents txtoutput2 As Label
     Friend WithEvents txtoutput1 As Label
+    Friend WithEvents MaskedTextBox1 As MaskedTextBox
 End Class
